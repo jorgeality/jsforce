@@ -8,7 +8,7 @@ router.use(bodyParser.json());
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express2' });
 });
 
 /*POST send information */
@@ -28,7 +28,7 @@ router.post('/api/contacts', function (req, res) {
     });
   });
 */
-  res.send('Got a POST request'+ req.email)
+  res.send('Got a POST request'+ req.body)
 });
 
 
