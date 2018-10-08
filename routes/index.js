@@ -13,7 +13,7 @@ router.get('/', function (req, res, next) {
 
 /*POST send information */
 router.post('/api/contacts', function (req, res) {
-  var resp;
+  
   var conn = new jsforce.Connection({
     // you can change loginUrl to connect to sandbox or prerelease env.
     loginUrl: 'https://test.salesforce.com'
@@ -23,11 +23,11 @@ router.post('/api/contacts', function (req, res) {
     if (err) { return console.error(err); }
     conn.sobject("Contact").create({ LastName: req.body.email, Email: req.body.email }, function (err, ret) {
       if (err || !ret.success) { return console.error(err, ret); }
-      resp = ret;
+      res.send(ret);
     });
   });
 
-  res.send(resp);
+  
 });
 
 
