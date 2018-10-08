@@ -28,7 +28,7 @@ router.post('/api/contacts', function (req, res) {
     });
   });
 */
-  res.send('Got a POST request')
+  res.send('Got a POST request'+ req)
 });
 
 
