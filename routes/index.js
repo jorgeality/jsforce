@@ -30,7 +30,7 @@ router.post('/api/contacts', function (req, res) {
       if (err || !ret.success) { return console.error(err, ret); }
     });
   });
-  res.send('record created : '+res);
+  res.send(res.body);
   
 });
 
