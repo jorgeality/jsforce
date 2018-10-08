@@ -10,11 +10,11 @@ router.get('/', function (req, res, next) {
 
 /*POST send information */
 router.post('/contacts', function (req, res, next) {
-  var conn = new jsforce.Connection({
+  /*var conn = new jsforce.Connection({
     // you can change loginUrl to connect to sandbox or prerelease env.
     loginUrl: 'https://test.salesforce.com'
   });
-  /*you need to put here your user and your password to do login */
+  /*you need to put here your user and your password to do login 
   conn.login('cgarrett@myhomes.services.preprod', 'Oce@ns11', function (err, res) {
     if (err) { return res.send(err); }
     conn.sobject("Contact").create({ LastName: req.email, Email: req.email }, function (err, ret) {
@@ -24,8 +24,9 @@ router.post('/contacts', function (req, res, next) {
       // ...
     });
   });
-
-})
+*/
+  res.send(req)
+});
 
 
 module.exports = router;
