@@ -27,7 +27,7 @@ router.post('/api/contacts', function (req, res) {
     });
   });
 
-  res.send(resp)
+  res.send(resp);
 });
 
 
