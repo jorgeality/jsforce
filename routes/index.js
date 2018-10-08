@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var jsforce = require('jsforce');
 var bodyParser = require("body-parser");
-router.use(bodyParser.urlencoded({ extended: true }))
+router.use(bodyParser.urlencoded({ extended: false }))
 router.use(bodyParser.json());
 
 
@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
 });
 
 /*POST send information */
-router.post('api/contacts', function (req, res) {
+router.post('/api/contacts', function (req, res) {
   /*var conn = new jsforce.Connection({
     // you can change loginUrl to connect to sandbox or prerelease env.
     loginUrl: 'https://test.salesforce.com'
