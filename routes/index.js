@@ -22,11 +22,11 @@ function createContact(lastName, email) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express', description: 'this is a little example how to use the jsforce library to send information to salesforce org' });
 });
-router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'HOME' });
-  createContact('jorgeality@testDiacohome.co', 'jorgeality@testDiacohome.co')
-});
+app.post('/contacts', function (req, res, next) {
+  createContact(req.Email, req.Email)
+})
+
 
 module.exports = router;
