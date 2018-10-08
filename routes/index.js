@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
 });
 
 /*POST send information */
-router.post('api/contacts', jsonParser, function (req, res, next) {
+router.post('api/contacts', function (req, res) {
   /*var conn = new jsforce.Connection({
     // you can change loginUrl to connect to sandbox or prerelease env.
     loginUrl: 'https://test.salesforce.com'
@@ -28,7 +28,7 @@ router.post('api/contacts', jsonParser, function (req, res, next) {
     });
   });
 */
-  res.send(req)
+  res.send('Got a POST request')
 });
 
 
