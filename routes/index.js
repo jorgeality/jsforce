@@ -23,10 +23,9 @@ router.post('/api/contacts', function (req, res) {
     if (err) { return console.error(err); }
     conn.sobject("Contact").create({ LastName: req.body.email, Email: req.body.email }, function (err, ret) {
       if (err || !ret.success) { return console.error(err, ret); }
-      res.send(ret);
     });
   });
-
+  res.send('record created : '+res);
   
 });
 
