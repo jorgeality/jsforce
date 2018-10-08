@@ -29,7 +29,7 @@ router.get('/', function (req, res, next) {
 });
 
 /*POST send information */
-app.post('/contacts', function (req, res, next) {
+router.post('/contacts', function (req, res, next) {
   var resp = createContact(req.Email, req.Email);
   res.send(resp);
 })
