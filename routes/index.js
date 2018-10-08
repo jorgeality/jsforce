@@ -4,6 +4,11 @@ var jsforce = require('jsforce');
 var bodyParser = require("body-parser");
 router.use(bodyParser.urlencoded({ extended: false }))
 router.use(bodyParser.json());
+router.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:"+(process.env.PORT || '3000'));
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+}); 
 
 
 /* GET home page. */
