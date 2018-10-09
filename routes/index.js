@@ -17,14 +17,14 @@ router.get('/home', function (req, res, next) {
 });
 
 /*POST send information */
-router.post('/api/contacts', function (req, res) {
+router.post('/api/sobject', function (req, res) {
 
   var conn = new jsforce.Connection({
     // you can change loginUrl to connect to sandbox or prerelease env.
     loginUrl: 'https://test.salesforce.com'
   });
   /*you need to put here your user and your password to do login */
-  conn.login('cgarrett@myhomes.services.preprod', 'Oce@ns11', function (err, res) {
+  conn.login('user@mail.co', 'password', function (err, res) {
     if (err) { return console.error(err); }
     conn.sobject("Contact").create({ LastName: req.body.email, Email: req.body.email }, function (err, ret) {
       if (err || !ret.success) { return console.error(err, ret); }
@@ -34,14 +34,14 @@ router.post('/api/contacts', function (req, res) {
 
 });
 /*POST send information */
-router.post('/api/reviews', function (req, res) {
+router.post('/api/sobject__c', function (req, res) {
 
   var conn = new jsforce.Connection({
     // you can change loginUrl to connect to sandbox or prerelease env.
     loginUrl: 'https://test.salesforce.com'
   });
   /*you need to put here your user and your password to do login */
-  conn.login('cgarrett@myhomes.services.preprod', 'Oce@ns11', function (err, res) {
+  conn.login('user@mail.co', 'password', function (err, res) {
     if (err) { return console.error(err); }
     conn.sobject("review__c").create({
       firstName__c: req.body.firstName,
