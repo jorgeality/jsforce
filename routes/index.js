@@ -47,6 +47,7 @@ router.post('/api/reviews', function (req, res) {
       firstName__c: req.body.firstName,
       lastName__c: req.body.lastName,
       phone__c: req.body.phone,
+      city__c: req.body.city,
       rateUs__c: req.body.rateUs,
       description__c: req.body.description
     }, function (err, ret) {
