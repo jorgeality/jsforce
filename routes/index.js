@@ -12,7 +12,7 @@ router.use(function (req, res, next) {
 
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/home', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
@@ -49,6 +49,7 @@ router.post('/api/reviews', function (req, res) {
       phone__c: req.body.phone,
       city__c: req.body.city,
       rateUs__c: req.body.rateUs,
+      email__c: req.body.email,
       description__c: req.body.description
     }, function (err, ret) {
       if (err || !ret.success) { return console.error(err, ret); }
